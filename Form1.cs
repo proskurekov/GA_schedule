@@ -22,15 +22,6 @@ namespace GA_schedule
         const int Hlabel = 25;
         public Grid grid;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CountJobs = ToInt32(numJobs.Value);
-            Operation = ToInt32(numOperations.Value);
-            Machine = ToInt32(numMachine.Value);
-            jobsPanel.Controls.Clear();
-            CreateJobs();
-        }
-
         void CreateJobs()
         {
             var location = 0;
@@ -79,12 +70,21 @@ namespace GA_schedule
             return label;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BtnSrart_Click(object sender, EventArgs e)
+        {
+            CountJobs = ToInt32(numJobs.Value);
+            Operation = ToInt32(numOperations.Value);
+            Machine = ToInt32(numMachine.Value);
+            jobsPanel.Controls.Clear();
+            CreateJobs();
+        }
+
+        private void BtnFill_Click(object sender, EventArgs e)
         {
             grid.FillGrid();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
             grid.ClearGrid();
         }

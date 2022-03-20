@@ -35,9 +35,9 @@ namespace GA_schedule
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.boxJobs = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnClear = new System.Windows.Forms.Button();
+            this.BtnFill = new System.Windows.Forms.Button();
+            this.BtnSrart = new System.Windows.Forms.Button();
             this.numOperations = new System.Windows.Forms.NumericUpDown();
             this.numJobs = new System.Windows.Forms.NumericUpDown();
             this.numMachine = new System.Windows.Forms.NumericUpDown();
@@ -116,9 +116,9 @@ namespace GA_schedule
             // 
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.boxJobs);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.BtnClear);
+            this.groupBox1.Controls.Add(this.BtnFill);
+            this.groupBox1.Controls.Add(this.BtnSrart);
             this.groupBox1.Controls.Add(this.numOperations);
             this.groupBox1.Controls.Add(this.numJobs);
             this.groupBox1.Controls.Add(this.numMachine);
@@ -156,41 +156,41 @@ namespace GA_schedule
             this.boxJobs.Size = new System.Drawing.Size(98, 23);
             this.boxJobs.TabIndex = 8;
             // 
-            // button3
+            // BtnClear
             // 
-            this.button3.Location = new System.Drawing.Point(7, 314);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.button3.Size = new System.Drawing.Size(218, 34);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Очистить таблицу";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BtnClear.Location = new System.Drawing.Point(7, 314);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.BtnClear.Size = new System.Drawing.Size(218, 34);
+            this.BtnClear.TabIndex = 7;
+            this.BtnClear.Text = "Очистить таблицу";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
-            // button2
+            // BtnFill
             // 
-            this.button2.Location = new System.Drawing.Point(7, 267);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.button2.Size = new System.Drawing.Size(218, 34);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Заполнить таблицу";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BtnFill.Location = new System.Drawing.Point(7, 267);
+            this.BtnFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnFill.Name = "BtnFill";
+            this.BtnFill.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.BtnFill.Size = new System.Drawing.Size(218, 34);
+            this.BtnFill.TabIndex = 6;
+            this.BtnFill.Text = "Заполнить таблицу";
+            this.BtnFill.UseVisualStyleBackColor = true;
+            this.BtnFill.Click += new System.EventHandler(this.BtnFill_Click);
             // 
-            // button1
+            // BtnSrart
             // 
-            this.button1.Location = new System.Drawing.Point(7, 175);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.button1.Size = new System.Drawing.Size(218, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Создать таблицу";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnSrart.Location = new System.Drawing.Point(7, 175);
+            this.BtnSrart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnSrart.Name = "BtnSrart";
+            this.BtnSrart.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.BtnSrart.Size = new System.Drawing.Size(218, 34);
+            this.BtnSrart.TabIndex = 1;
+            this.BtnSrart.Text = "Создать таблицу";
+            this.BtnSrart.UseVisualStyleBackColor = true;
+            this.BtnSrart.Click += new System.EventHandler(this.BtnSrart_Click);
             // 
             // numOperations
             // 
@@ -447,9 +447,9 @@ namespace GA_schedule
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox boxJobs;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.Button BtnFill;
+        private System.Windows.Forms.Button BtnSrart;
         private System.Windows.Forms.NumericUpDown numOperations;
         private System.Windows.Forms.NumericUpDown numJobs;
         private System.Windows.Forms.NumericUpDown numMachine;
