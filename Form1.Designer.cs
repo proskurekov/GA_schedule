@@ -34,7 +34,6 @@ namespace GA_schedule
             this.jobsPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.boxJobs = new System.Windows.Forms.ComboBox();
             this.BtnClear = new System.Windows.Forms.Button();
             this.BtnFill = new System.Windows.Forms.Button();
             this.BtnSrart = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@ namespace GA_schedule
             this.label7 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listJobs = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,8 +114,8 @@ namespace GA_schedule
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listJobs);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.boxJobs);
             this.groupBox1.Controls.Add(this.BtnClear);
             this.groupBox1.Controls.Add(this.BtnFill);
             this.groupBox1.Controls.Add(this.BtnSrart);
@@ -142,19 +142,6 @@ namespace GA_schedule
             this.label4.Size = new System.Drawing.Size(114, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Выбрать работу";
-            // 
-            // boxJobs
-            // 
-            this.boxJobs.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.boxJobs.FormattingEnabled = true;
-            this.boxJobs.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.boxJobs.Location = new System.Drawing.Point(127, 228);
-            this.boxJobs.Name = "boxJobs";
-            this.boxJobs.Size = new System.Drawing.Size(98, 23);
-            this.boxJobs.TabIndex = 8;
             // 
             // BtnClear
             // 
@@ -416,6 +403,15 @@ namespace GA_schedule
             this.tabPage2.Text = "Расписание";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // listJobs
+            // 
+            this.listJobs.FormattingEnabled = true;
+            this.listJobs.Location = new System.Drawing.Point(127, 228);
+            this.listJobs.Name = "listJobs";
+            this.listJobs.Size = new System.Drawing.Size(98, 22);
+            this.listJobs.TabIndex = 10;
+            this.listJobs.SelectedIndexChanged += new System.EventHandler(this.listJobs_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +442,6 @@ namespace GA_schedule
         public System.Windows.Forms.Panel jobsPanel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox boxJobs;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Button BtnFill;
         private System.Windows.Forms.Button BtnSrart;
@@ -469,6 +464,7 @@ namespace GA_schedule
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox listJobs;
     }
 }
 

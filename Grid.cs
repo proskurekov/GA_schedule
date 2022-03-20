@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Drawing; 
 using System.Collections.Generic;
 using static System.Convert;
-
+using System.Linq;
 
 namespace GA_schedule
 {
@@ -95,27 +95,31 @@ namespace GA_schedule
             }
             return _grids;
         }
-        
-        public void FillGrid()
+
+        public void FillGrid(int indx)
         {
             var temp = new int[Operation, Machine];
-            foreach (var grid in _grids)
+            var rand = new Random();
+            var grids = indx == 0 ? _grids : _grids.GetRange(indx-1, 1);  
+
+            foreach (var grid in grids)
             {
-                var rand = new Random();
                 for (int i = 0; i < Operation; i++)
                 {
                     for (int j = 0; j < Machine; j++)
                     {
-                        temp[i, j] = rand.Next(200);
+                        var condition = rand.Next(200);
+                        temp[i, j] = condition > 50 ? condition : 0;
                         grid.Rows[i].Cells[j].Value = temp[i, j];
                     }
                 }
             }
         }
-        
-        public void ClearGrid()
+        public void ClearGrid(int indx)
         {
-            foreach (var grid in _grids)
+            var grids = indx == 0 ? _grids : _grids.GetRange(indx - 1, 1);
+
+            foreach (var grid in grids)
             {
                 for (int i = 0; i < Operation; i++)
                 {

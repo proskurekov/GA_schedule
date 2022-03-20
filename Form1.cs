@@ -19,8 +19,9 @@ namespace GA_schedule
         }
 
         int CountJobs, Operation, Machine;
-        const int Hlabel = 25;
+        const int LabelHeight = 25;
         public Grid grid;
+        public int indexJob = 0;  
 
         void CreateJobs()
         {
@@ -29,14 +30,14 @@ namespace GA_schedule
             for ((int i, int l) = (0, 1); i < CountJobs; i++, l++)
             {
                 grid = new Grid(Machine, Operation);
-
-                var panel = CreatePanel(grid.Param.Width, grid.Param.Height + Hlabel);
+                var panel = CreatePanel(grid.Param.Width, grid.Param.Height + LabelHeight);
                 var label = CreateLabel();
                 var y = grid.Param.ClientSize.Height;
-                var margin = 20 + Hlabel;
+                var margin = 20 + LabelHeight;
                 panel.Location = new Point(0, location);
                 location += y + margin;
                 label.Text = "Работа " + l;
+                listJobs.Items.Add(label.Text);
                 panel.Controls.Add(label);
                 panel.Controls.Add(grid.Param);
                 jobsPanel.Controls.Add(panel);
@@ -65,7 +66,7 @@ namespace GA_schedule
                 Text = "",
                 ForeColor = Color.Purple,
                 Width = 60,
-                Height = Hlabel,
+                Height = LabelHeight,
             };
             return label;
         }
@@ -76,17 +77,24 @@ namespace GA_schedule
             Operation = ToInt32(numOperations.Value);
             Machine = ToInt32(numMachine.Value);
             jobsPanel.Controls.Clear();
+            listJobs.Items.Add("Все работы");
+            listJobs.SelectedIndex = 0;
             CreateJobs();
+        }
+
+        private void listJobs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            indexJob = listJobs.SelectedIndex;
         }
 
         private void BtnFill_Click(object sender, EventArgs e)
         {
-            grid.FillGrid();
+            grid.FillGrid(indexJob);
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            grid.ClearGrid();
+            grid.ClearGrid(indexJob);
         }
     }
 }
