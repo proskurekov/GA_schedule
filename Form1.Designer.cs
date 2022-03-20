@@ -33,6 +33,7 @@ namespace GA_schedule
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.jobsPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listJobs = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BtnClear = new System.Windows.Forms.Button();
             this.BtnFill = new System.Windows.Forms.Button();
@@ -47,16 +48,15 @@ namespace GA_schedule
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.BtnStartProc = new System.Windows.Forms.Button();
+            this.numSizePop = new System.Windows.Forms.NumericUpDown();
+            this.numMut = new System.Windows.Forms.NumericUpDown();
+            this.numPop = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listJobs = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -65,9 +65,9 @@ namespace GA_schedule
             ((System.ComponentModel.ISupportInitialize)(this.numMachine)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSizePop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPop)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -134,6 +134,15 @@ namespace GA_schedule
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки таблицы";
+            // 
+            // listJobs
+            // 
+            this.listJobs.FormattingEnabled = true;
+            this.listJobs.Location = new System.Drawing.Point(127, 228);
+            this.listJobs.Name = "listJobs";
+            this.listJobs.Size = new System.Drawing.Size(98, 22);
+            this.listJobs.TabIndex = 10;
+            this.listJobs.SelectedIndexChanged += new System.EventHandler(this.listJobs_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -288,10 +297,10 @@ namespace GA_schedule
             // 
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.numericUpDown4);
-            this.groupBox2.Controls.Add(this.numericUpDown5);
-            this.groupBox2.Controls.Add(this.numericUpDown6);
+            this.groupBox2.Controls.Add(this.BtnStartProc);
+            this.groupBox2.Controls.Add(this.numSizePop);
+            this.groupBox2.Controls.Add(this.numMut);
+            this.groupBox2.Controls.Add(this.numPop);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
@@ -325,40 +334,76 @@ namespace GA_schedule
             this.button5.Text = "Остановить";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BtnStartProc
             // 
-            this.button6.Location = new System.Drawing.Point(7, 175);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.button6.Size = new System.Drawing.Size(228, 34);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Запустить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.BtnStartProc.Location = new System.Drawing.Point(7, 175);
+            this.BtnStartProc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnStartProc.Name = "BtnStartProc";
+            this.BtnStartProc.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.BtnStartProc.Size = new System.Drawing.Size(228, 34);
+            this.BtnStartProc.TabIndex = 1;
+            this.BtnStartProc.Text = "Запустить";
+            this.BtnStartProc.UseVisualStyleBackColor = true;
+            this.BtnStartProc.Click += new System.EventHandler(this.BtnStartProc_Click);
             // 
-            // numericUpDown4
+            // numSizePop
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(150, 124);
-            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(85, 22);
-            this.numericUpDown4.TabIndex = 5;
+            this.numSizePop.Location = new System.Drawing.Point(150, 124);
+            this.numSizePop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numSizePop.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numSizePop.Name = "numSizePop";
+            this.numSizePop.Size = new System.Drawing.Size(85, 22);
+            this.numSizePop.TabIndex = 5;
+            this.numSizePop.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown5
+            // numMut
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(150, 82);
-            this.numericUpDown5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(85, 22);
-            this.numericUpDown5.TabIndex = 4;
+            this.numMut.Location = new System.Drawing.Point(150, 82);
+            this.numMut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numMut.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMut.Name = "numMut";
+            this.numMut.Size = new System.Drawing.Size(85, 22);
+            this.numMut.TabIndex = 4;
+            this.numMut.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown6
+            // numPop
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(150, 41);
-            this.numericUpDown6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(85, 22);
-            this.numericUpDown6.TabIndex = 3;
+            this.numPop.Location = new System.Drawing.Point(150, 41);
+            this.numPop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numPop.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numPop.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numPop.Name = "numPop";
+            this.numPop.Size = new System.Drawing.Size(85, 22);
+            this.numPop.TabIndex = 3;
+            this.numPop.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -403,15 +448,6 @@ namespace GA_schedule
             this.tabPage2.Text = "Расписание";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listJobs
-            // 
-            this.listJobs.FormattingEnabled = true;
-            this.listJobs.Location = new System.Drawing.Point(127, 228);
-            this.listJobs.Name = "listJobs";
-            this.listJobs.Size = new System.Drawing.Size(98, 22);
-            this.listJobs.TabIndex = 10;
-            this.listJobs.SelectedIndexChanged += new System.EventHandler(this.listJobs_SelectedIndexChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,9 +464,9 @@ namespace GA_schedule
             ((System.ComponentModel.ISupportInitialize)(this.numMachine)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSizePop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,10 +491,10 @@ namespace GA_schedule
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Button BtnStartProc;
+        private System.Windows.Forms.NumericUpDown numSizePop;
+        private System.Windows.Forms.NumericUpDown numMut;
+        private System.Windows.Forms.NumericUpDown numPop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

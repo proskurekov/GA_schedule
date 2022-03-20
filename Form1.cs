@@ -87,6 +87,13 @@ namespace GA_schedule
             indexJob = listJobs.SelectedIndex;
         }
 
+        private void BtnStartProc_Click(object sender, EventArgs e)
+        {
+            int populations = ToInt32(numPop.Value);
+            var alg = new GeneticAlg(CountJobs,Operation,Machine,populations);
+            alg.Generate();
+        }
+
         private void BtnFill_Click(object sender, EventArgs e)
         {
             grid.FillGrid(indexJob);
