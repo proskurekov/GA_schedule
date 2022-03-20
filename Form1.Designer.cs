@@ -85,7 +85,7 @@ namespace GA_schedule
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(10, 6);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(924, 533);
+            this.tabControl1.Size = new System.Drawing.Size(1011, 587);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -98,7 +98,7 @@ namespace GA_schedule
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(916, 495);
+            this.tabPage1.Size = new System.Drawing.Size(1003, 549);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Таблица";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -107,9 +107,9 @@ namespace GA_schedule
             // 
             this.jobsPanel.AutoScroll = true;
             this.jobsPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.jobsPanel.Location = new System.Drawing.Point(250, 4);
+            this.jobsPanel.Location = new System.Drawing.Point(259, 4);
             this.jobsPanel.Name = "jobsPanel";
-            this.jobsPanel.Size = new System.Drawing.Size(741, 470);
+            this.jobsPanel.Size = new System.Drawing.Size(741, 541);
             this.jobsPanel.TabIndex = 1;
             // 
             // groupBox1
@@ -130,7 +130,7 @@ namespace GA_schedule
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(250, 470);
+            this.groupBox1.Size = new System.Drawing.Size(250, 541);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки таблицы";
@@ -166,6 +166,7 @@ namespace GA_schedule
             this.button3.TabIndex = 7;
             this.button3.Text = "Очистить таблицу";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -177,6 +178,7 @@ namespace GA_schedule
             this.button2.TabIndex = 6;
             this.button2.Text = "Заполнить таблицу";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -188,6 +190,7 @@ namespace GA_schedule
             this.button1.TabIndex = 1;
             this.button1.Text = "Создать таблицу";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // numOperations
             // 
@@ -289,7 +292,7 @@ namespace GA_schedule
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(916, 495);
+            this.tabPage3.Size = new System.Drawing.Size(1003, 549);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Параметры ГА";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -311,7 +314,7 @@ namespace GA_schedule
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(250, 489);
+            this.groupBox2.Size = new System.Drawing.Size(250, 543);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Основные параметры";
@@ -398,9 +401,9 @@ namespace GA_schedule
             // 
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(172, 3);
+            this.listBox1.Location = new System.Drawing.Point(259, 3);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(741, 489);
+            this.listBox1.Size = new System.Drawing.Size(741, 543);
             this.listBox1.TabIndex = 2;
             // 
             // tabPage2
@@ -408,7 +411,7 @@ namespace GA_schedule
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(916, 495);
+            this.tabPage2.Size = new System.Drawing.Size(1003, 549);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Расписание";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -417,7 +420,7 @@ namespace GA_schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 533);
+            this.ClientSize = new System.Drawing.Size(1011, 587);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
