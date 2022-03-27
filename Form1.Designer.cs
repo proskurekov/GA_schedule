@@ -55,7 +55,6 @@ namespace GA_schedule
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -284,7 +283,6 @@ namespace GA_schedule
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.listBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -429,15 +427,6 @@ namespace GA_schedule
             this.label7.TabIndex = 1;
             this.label7.Text = "Число популяций:\r\n\r\n\r\n:";
             // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(259, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(741, 543);
-            this.listBox1.TabIndex = 2;
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
@@ -498,7 +487,6 @@ namespace GA_schedule
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ComboBox listJobs;
     }

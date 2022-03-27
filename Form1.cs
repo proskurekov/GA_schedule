@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Convert; 
+using static System.Convert;
+using GeneticSharp.Domain.Populations;
+using GeneticSharp.Domain.Chromosomes;
+using GeneticSharp.Domain.Crossovers; 
 
 namespace GA_schedule
 {
@@ -89,9 +92,7 @@ namespace GA_schedule
 
         private void BtnStartProc_Click(object sender, EventArgs e)
         {
-            int populations = ToInt32(numPop.Value);
-            var alg = new GeneticAlg(CountJobs,Operation,Machine,populations);
-            alg.Generate();
+            //start
         }
 
         private void BtnFill_Click(object sender, EventArgs e)
